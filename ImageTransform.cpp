@@ -107,17 +107,22 @@ PNG illinify(PNG image) {
     for (unsigned y = 0; y < image.height(); y++) {
       HSLAPixel & pixel = image.getPixel(x, y);
 
-      if ((pixel.h-11) > (pixel.h-216)) {
+      if (pixel.h < 113.5) {
         pixel.h = 11;
       }
-      else {
+      else if (pixel.h < 293.5) {
         pixel.h = 216;
+      } 
+      else {
+        pixel.h = 11;
       }
       // `pixel` is a reference to the memory stored inside of the PNG `image`,
       // which means you're changing the image directly. No need to `set`
       // the pixel since you're directly changing the memory of the image.
     }
   }
+  // HSLAPixel & pixel = image.getPixel(200, 4);
+  // if (pixel.h == 11) {pixel.h = 216;}
   return image;
 }
  
