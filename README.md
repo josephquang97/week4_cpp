@@ -1,8 +1,10 @@
 # week4_cpp
 
+## Overview
+
 ### Hue (h)
 
-$$ h = [0,360] $$
+``` h = [0,360] ```
 
 Two main color:
 - "Illini Orange" has a hue of 11
@@ -10,13 +12,13 @@ Two main color:
 
 ### Saturation (s)
 
-$$ s = [0,100] $$
+``` s = [0,100] ```
 
 Non-color --> Full Color
 
 ### Luminance (l)
 
-$$ l = [0,100] $$
+``` l = [0,100] ```
 
 White --> Dark
 
@@ -33,8 +35,7 @@ The full HSL color space is a three-dimensional space, but it is not a cube (nor
 
 ## Part 1: Programming Objectives
 
-You need to create a class called HSLAPixel within the uiuc namespace in the file uiuc/HSLAPixel.h. Each
-pixel should contain four public member variables:
+You need to create a class called **HSLAPixel** within the uiuc namespace in the file **uiuc/HSLAPixel.h**. Each pixel should contain four public member variables:
 - h, storing the hue of the pixel in degrees between 0 and 360 using a double
 - s, storing the saturation of the pixel as a decimal value between 0.0 and 1.0 using a double
 - l, storing the luminance of the pixel as a decimal value between 0.0 and 1.0 using a double
