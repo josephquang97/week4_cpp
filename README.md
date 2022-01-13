@@ -1,8 +1,10 @@
 # week4_cpp
 
+## Overview
+
 ### Hue (h)
 
-$$ h = [0,360] $$
+``` h = [0,360] ```
 
 Two main color:
 - "Illini Orange" has a hue of 11
@@ -10,13 +12,13 @@ Two main color:
 
 ### Saturation (s)
 
-$$ s = [0,100] $$
+``` s = [0,100] ```
 
 Non-color --> Full Color
 
 ### Luminance (l)
 
-$$ l = [0,100] $$
+``` l = [0,100] ```
 
 White --> Dark
 
