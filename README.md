@@ -54,7 +54,7 @@ JPEG compression. Apart from photographs, though, PNG offers relatively small fi
 with few colors, making it a popular choice for small details in a website user interface, for example.</div>
 </p>
 <p class="text">
-<div align="justify">Inside of your uiuc directory, you may have noticed PNG.h and PNG.cpp. We have provided an already
+<div align="justify">Inside of your uiuc directory, you may have noticed <b>PNG.h</b> and <b>PNG.cpp</b>. We have provided an already
 complete PNG class that saves and loads PNG files and exposes a simple API for you to modify PNG files. (An
 API, or application programming interface, just means the documented, surface-level part of the code that you
 work with as someone who is making use of the library. You do not need to fully understand how the PNG class
@@ -157,7 +157,7 @@ value is closer to Illini Orange or Illini Blue. Remember, hue values are arrang
 increasing the hue value, for example, what should eventually happen?
 </div></p>
 
-<p><img src="./.github/example2.svg?sanitize=true"></p>
+<p align="justify"><img src="./.github/example2.svg?sanitize=true"></p>
 
 #### Function #2: spotlight
 
@@ -168,12 +168,12 @@ A spotlight adjusts the luminance of a pixel based on the distance between the t
 center by decreasing the luminance by 0.5% per 1 pixel unit of Euclidean distance, up to an 80% decrease in
 luminance at most.</div></p>
 <p class="text"><div align="justify">
-For example, a pixel 3 pixels above and 4 pixels to the right of the center is a total of sqrt(3*3 + 4*4)
-= sqrt(25) = 5 pixels away and its luminance is decreased by 2.5% (0.975 its original value). At a distance
+For example, a pixel 3 pixels above and 4 pixels to the right of the center is a total of <b>sqrt</b>(3*3 + 4*4)
+= <b>sqrt</b>(25) = 5 pixels away and its luminance is decreased by 2.5% (0.975 its original value). At a distance
 over 160 pixels away, the luminance will always be decreased by 80% (0.2x its original value).
 </div></p>
 
-<p><img src="./.github/example3.svg?sanitize=true"></p>
+<p align="justify"><img src="./.github/example3.svg?sanitize=true"></p>
 
 #### Function #3: watermark
 
@@ -197,5 +197,5 @@ of both base image and stencil, the luminance of the base image should be increa
 to exceed 1.0) if and only if the luminance of the stencil at the same pixel position is at maximum (1.0)
 </div></p>
 
-<p><img src="./.github/example4.svg?sanitize=true"></p>
+<p align="justify"><img src="./.github/example4.svg?sanitize=true"></p>
 

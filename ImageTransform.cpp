@@ -68,6 +68,23 @@ PNG grayscale(PNG image) {
  */
 PNG createSpotlight(PNG image, int centerX, int centerY) {
 
+  for (unsigned x = 0; x < image.width(); x++) {
+    for (unsigned y = 0; y < image.height(); y++) {
+      double dist;
+      HSLAPixel & pixel = image.getPixel(x, y);
+      dist = sqrt(pow((x-centerX),2)+pow((y-centerY),2));
+      if (dist>160) {
+        pixel.l *= 0.2;
+      }
+      else {
+        pixel.l *= 0.975;
+      }
+      // `pixel` is a reference to the memory stored inside of the PNG `image`,
+      // which means you're changing the image directly. No need to `set`
+      // the pixel since you're directly changing the memory of the image.
+    }
+  }
+
   return image;
   
 }
@@ -84,7 +101,23 @@ PNG createSpotlight(PNG image, int centerX, int centerY) {
  * @return The illinify'd image.
 **/
 PNG illinify(PNG image) {
+  /// This function is already written for you so you can see how to
+  /// interact with our PNG class.
+  for (unsigned x = 0; x < image.width(); x++) {
+    for (unsigned y = 0; y < image.height(); y++) {
+      HSLAPixel & pixel = image.getPixel(x, y);
 
+      if ((pixel.h-11) > (pixel.h-216)) {
+        pixel.h = 11;
+      }
+      else {
+        pixel.h = 216;
+      }
+      // `pixel` is a reference to the memory stored inside of the PNG `image`,
+      // which means you're changing the image directly. No need to `set`
+      // the pixel since you're directly changing the memory of the image.
+    }
+  }
   return image;
 }
  
@@ -102,6 +135,19 @@ PNG illinify(PNG image) {
 * @return The watermarked image.
 */
 PNG watermark(PNG firstImage, PNG secondImage) {
+  for (unsigned x = 0; x < secondImage.width(); x++) {
+    for (unsigned y = 0; y < secondImage.height(); y++) {
+      HSLAPixel & pixel = secondImage.getPixel(x, y);
+      HSLAPixel & pixel_ret = firstImage.getPixel(x, y);
 
+      if (pixel.l > 0.80) {
+        pixel_ret.l = pixel_ret.l + 0.2;
+        pixel_ret.l = (pixel_ret.l>1.0)?1.0:pixel_ret.l;
+      }
+      // `pixel` is a reference to the memory stored inside of the PNG `image`,
+      // which means you're changing the image directly. No need to `set`
+      // the pixel since you're directly changing the memory of the image.
+    }
+  }
   return firstImage;
 }
