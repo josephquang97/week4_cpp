@@ -33,10 +33,6 @@ TEST_CASE("HSLAPixel should have member a as double", "[weight=1]") {
   REQUIRE(uiuc_testing::is_double<decltype(HSLAPixel::a)>::value);
 }
 
-// The following tests are disabled.
-// They evaluate constructors, but the Week 1-2 content doesn't cover constructors currently.
-#undef DO_PART1_CTOR_TESTS
-#ifdef DO_PART1_CTOR_TESTS
 
 // HSLAPixel default constructor
 TEST_CASE("HSLAPixel's default constructor should create a white pixel", "[weight=1]") {
@@ -179,6 +175,12 @@ TEST_CASE("watermark", "[weight=1]") {
     REQUIRE( png.getPixel(200, 25).l + 0.2 == result.getPixel(200, 25).l );
   }
 }
+
+
+// The following tests are disabled.
+// They evaluate constructors, but the Week 1-2 content doesn't cover constructors currently.
+#undef DO_PART1_CTOR_TESTS
+#ifdef DO_PART1_CTOR_TESTS
 
 
 #endif
