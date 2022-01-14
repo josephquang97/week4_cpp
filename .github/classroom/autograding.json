@@ -3,8 +3,8 @@
       {
         "name": "Test",
         "setup": "",
-        "run": "make test"
-        "run": "./test"
+        "run": "make test",
+        "run": "./test",
         "input": "",
         "output": "",
         "comparison": "included",
