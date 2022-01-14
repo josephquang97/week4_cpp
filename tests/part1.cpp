@@ -95,29 +95,6 @@ PNG createWatermark() {
 }
 
 
-
-TEST_CASE("createSpotlight", "[weight=1]") {
-  PNG png = createRainbowPNG();
-  PNG result = createSpotlight(png, 100, 50);
-
-  SECTION("Spotlight should not modify the center pixel") {
-    REQUIRE( png.getPixel(100, 50).l == result.getPixel(100, 50).l );
-  }
-
-  SECTION("Spotlight should create an 80% dark pixel >160 pixels away") {
-    REQUIRE( png.getPixel(320, 50).l * 0.2 == Approx(result.getPixel(320, 50).l) );
-  }
-  
-  SECTION("Spotlight should be correct at 20 pixels away from center") {
-    REQUIRE( png.getPixel(100, 50 + 20).l * 0.9 == Approx(result.getPixel(100, 50 + 20).l) );
-  }
-
-  SECTION("Spotlight should be correct at 5 pixels away from center") {
-    REQUIRE( png.getPixel(100 + 3, 50 + 4).l * 0.975 == Approx(result.getPixel(100 + 3, 50 + 4).l) );
-  }
-}
-
-
 TEST_CASE("illinify", "[weight=1]") {
   PNG png = createRainbowPNG();
   PNG result = illinify(png);
@@ -182,6 +159,26 @@ TEST_CASE("watermark", "[weight=1]") {
 #undef DO_PART1_CTOR_TESTS
 #ifdef DO_PART1_CTOR_TESTS
 
+TEST_CASE("createSpotlight", "[weight=1]") {
+  PNG png = createRainbowPNG();
+  PNG result = createSpotlight(png, 100, 50);
+
+  SECTION("Spotlight should not modify the center pixel") {
+    REQUIRE( png.getPixel(100, 50).l == result.getPixel(100, 50).l );
+  }
+
+  SECTION("Spotlight should create an 80% dark pixel >160 pixels away") {
+    REQUIRE( png.getPixel(320, 50).l * 0.2 == Approx(result.getPixel(320, 50).l) );
+  }
+  
+  SECTION("Spotlight should be correct at 20 pixels away from center") {
+    REQUIRE( png.getPixel(100, 50 + 20).l * 0.9 == Approx(result.getPixel(100, 50 + 20).l) );
+  }
+
+  SECTION("Spotlight should be correct at 5 pixels away from center") {
+    REQUIRE( png.getPixel(100 + 3, 50 + 4).l * 0.975 == Approx(result.getPixel(100 + 3, 50 + 4).l) );
+  }
+}
 
 #endif
 
