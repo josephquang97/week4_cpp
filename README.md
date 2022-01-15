@@ -91,7 +91,7 @@ will be a gray pixel. For example, here’s this transformation applied to the A
 the original, and the one on the right has been desaturated:
 </div></p>
 
-<p align="justify">
+<p align="center">
 <img src="./.github/example1.svg?sanitize=true">
 </p>
 
@@ -157,7 +157,7 @@ value is closer to Illini Orange or Illini Blue. Remember, hue values are arrang
 increasing the hue value, for example, what should eventually happen?
 </div></p>
 
-<p align="justify"><img src="./.github/example2.svg?sanitize=true"></p>
+<p align="center"><img src="./.github/example2.svg?sanitize=true"></p>
 
 #### Function #2: spotlight
 
@@ -173,7 +173,7 @@ For example, a pixel 3 pixels above and 4 pixels to the right of the center is a
 over 160 pixels away, the luminance will always be decreased by 80% (0.2x its original value).
 </div></p>
 
-<p align="justify"><img src="./.github/example3.svg?sanitize=true"></p>
+<p align="center"><img src="./.github/example3.svg?sanitize=true"></p>
 
 #### Function #3: watermark
 
@@ -197,5 +197,5 @@ of both base image and stencil, the luminance of the base image should be increa
 to exceed 1.0) if and only if the luminance of the stencil at the same pixel position is at maximum (1.0)
 </div></p>
 
-<p align="justify"><img src="./.github/example4.svg?sanitize=true"></p>
+<p align="center"><img src="./.github/example4.svg?sanitize=true"></p>
 
